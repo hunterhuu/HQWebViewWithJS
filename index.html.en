@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+</head>
+<body>
+<script>
+        function showAlert(){
+            alert("alert");
+        }
+
+        function showConfirm() {
+            var result = confirm("showConfirm");
+            if (result) {
+                document.getElementById("result").innerHTML="yes";
+            } else {
+                document.getElementById("result").innerHTML="no";
+            }
+        }
+
+        function showPrompt() {
+            var msg = prompt("input");
+            document.getElementById("result").innerHTML=msg;
+        }
+
+        // JS调用OC
+        function jumpToiOSMethod() {
+            // window.webkit.messageHandlers.iOSMethodName.postMessage(null);
+            window.webkit.messageHandlers.testMethod.postMessage('hello world');
+        }
+
+        function OCCallJS1(params1, params2, params3) {
+            var str = params1 + params2 + params3;
+            document.getElementById("result1").innerHTML = str;
+        }
+        function OCCallJS2(params1, params2, params3) {
+            var str = params1 * params2 * params3;
+            document.getElementById("result2").innerHTML = str;
+        }
+        function OCCallJS3(params1, params2, params3) {
+            var str = params1 * params2 + params3;
+            document.getElementById("result3").innerHTML = str;
+        }</script>
+<br/>
+<br/>
+<div>
+    <input type="button" value="showAlert" onclick="showAlert()">
+</div>
+<br/>
+<div>
+    <input type="button" value="showConfirm" onclick="showConfirm()">
+</div>
+<br/>
+<div>
+    <input type="button" value="showPrompt" onclick="showPrompt()">
+</div>
+<br/>
+<div>
+<!--     JS调用OC
+ --><input type="button" value="jumpToiOSMethod" onclick="jumpToiOSMethod()">
+</div>
+<br/>
+<div>
+    <h4>回调结果1:</h4>
+    <span id="result1"></span>
+</div>
+<div>
+    <h4>回调结果2:</h4>
+    <span id="result2"></span>
+</div>
+<div>
+    <h4>回调结果3:</h4>
+    <span id="result3"></span>
+</div>
+<div> 
+    <a href = "http://www.baidu.com">www.baidu.com</a>
+</div>
+<div> 
+    <a href = "http://www.baidu.com" target="_blank">www.baidu.com open new window</a>
+</div>
+</body>
+</html>
