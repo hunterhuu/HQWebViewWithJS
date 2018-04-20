@@ -1,0 +1,46 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Insert title here</title>
+	<script>
+		function clickHandlerWithMethodName(methodName) {
+			// var xmlHttp = new XMLHttpRequest();
+			// xmlHttp.open("POST", @"", true);
+			// xmlHttp.setRequestHeader('content-type', 'application/json');
+			// xmlHttp.onreadystatechange = function (oEvent) {
+			// 	if (xmlHttp.readyState === 4) {
+			// 		if (xmlHttp.status === 200) {
+			// 			document.getElementById("textfield").innerHTML = xmlHttp.responseText;
+			// 		} else {
+			// 			document.getElementById("textfield").innerHTML = xmlHttp.statusText;
+			// 		}
+			// 	}
+			// };
+			// var sendData = "{\"Method\" : \"" + methodName +"\"}";
+			// xmlHttp.send(sendData);
+		}
+	</script>
+
+	<script>
+		function jumpButtonMethod() {
+			window.open('httpS://www.baidu.com');
+		}
+	</script>
+
+</head>
+<body>
+	<button type="button" onclick="clickHandlerWithMethodName('add')">add</button>
+	<br />
+	<button type="button" onclick="clickHandlerWithMethodName('del')">del</button>
+	<br />
+	<button type="button" onclick="clickHandlerWithMethodName('chg')">chg</button>
+	<br />
+	<button type="button" onclick="clickHandlerWithMethodName('ser')">ser</button>
+	<br />
+	<p id="textfield">textField</p>
+	<br />
+	<button type="button" onclick="jumpButtonMethod()">jumpToBaidu</button>
+</head>
+</body>
+</html>
